@@ -1,4 +1,4 @@
 ```
-$ cp .inputrc ~/.inputrc
+$ cp .inputrc >> ~/.inputrc
 $ cat .bashrc >> ~/.bashrc
 ```
