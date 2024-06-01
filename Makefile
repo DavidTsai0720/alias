@@ -30,12 +30,16 @@ install:
 
 .PHONY: install-homebrew
 install-homebrew:
-	@echo "Installing Homebrew..."
-	@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	@test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-	@test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-	@echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-	@export PATH="$(HOME)/.linuxbrew/bin:$(PATH)"
+    @echo "Installing Homebrew..."
+    @/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    @echo "Checking if ~/.linuxbrew exists..."
+    @test -d ~/.linuxbrew && echo "~/.linuxbrew exists" || echo "~/.linuxbrew does not exist"
+    @echo "Checking if ~/.linuxbrew/bin/brew exists..."
+    @test -f ~/.linuxbrew/bin/brew && echo "~/.linuxbrew/bin/brew exists" || echo "~/.linuxbrew/bin/brew does not exist"
+    @echo "Running brew shellenv..."
+    @test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+    @echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+    @export PATH="$(HOME)/.linuxbrew/bin:$(PATH)"
 
 .PHONY: install-gvm
 install-gvm:
