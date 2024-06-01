@@ -21,6 +21,7 @@ export POSTGRES_USER=postgres
 export POSTGRES_PORT=5432
 export POSTGRES_DB=users
 export LOCAL_DB_NAME=db
+export CHANGE_LOG="changelog.xml"
 
 alias create-db="docker run --name ${LOCAL_DB_NAME} -itd --restart always \
 -p ${POSTGRES_PORT}:5432 \
@@ -28,12 +29,14 @@ alias create-db="docker run --name ${LOCAL_DB_NAME} -itd --restart always \
 -e POSTGRES_PORT=5432 -e POSTGRES_DB=${POSTGRES_DB} \
 postgres:16-alpine"
 
-alias update-db='liquibase --url="jdbc:postgresql://localhost:${POSTGRES_PORT}/${POSTGRES_DB}" \
+alias update-db='liquibase --url="jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}" \
 --username=${POSTGRES_USER} \
 --password=${POSTGRES_PASSWORD} \
---changeLogFile=changelog.xml update'
+--changeLogFile=${CHANGE_LOG} update'
 
 alias delete-db="docker stop ${LOCAL_DB_NAME} && docker rm ${LOCAL_DB_NAME}"
 
 alias create-dynamodb='docker run -itd --name dynamodb -p 8000:8000 amazon/dynamodb-local'
 alias delete-dynamodb='docker stop dynamodb && docker rm dynamodb'
+
+# python3 -c 'import locale; print(locale.getpreferredencoding())'
