@@ -25,4 +25,6 @@ BREW_PACKAGES = \
 
 .PHONY: install
 install:
+	@echo "Installing brew packages..."
+	@echo $(PATH)
 	@brew install $(BREW_PACKAGES)
