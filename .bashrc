@@ -22,7 +22,7 @@ export POSTGRES_PORT=5432
 export POSTGRES_DB=users
 export LOCAL_DB_NAME=db
 
-alias create-db="docker run --name db -itd --restart always \
+alias create-db="docker run --name ${LOCAL_DB_NAME} -itd --restart always \
 -p ${POSTGRES_PORT}:5432 \
 -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} \
 -e POSTGRES_PORT=5432 -e POSTGRES_DB=${POSTGRES_DB} \
