@@ -18,7 +18,7 @@ BREW_PACKAGES = \
 	bison \
 	clang-format \
 	openjdk \
-	heml \
+	helm \
 	maven \
 	plantuml \
 
