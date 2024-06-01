@@ -22,5 +22,5 @@ jobs:
       - name: Install Dependencies
         run: |
           cat ~/.bashrc
-          ll /home/linuxbrew/.linuxbrew/bin/brew
+          ll -l /home/linuxbrew/.linuxbrew/bin/brew
           make
