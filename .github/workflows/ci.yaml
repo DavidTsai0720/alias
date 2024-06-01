@@ -21,5 +21,5 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          alias brew="~/.linuxbrew/bin/brew"
+          PATH="$HOME/.linuxbrew/bin:$PATH"
           make
