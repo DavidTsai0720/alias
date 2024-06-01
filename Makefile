@@ -17,7 +17,6 @@ BREW_PACKAGES = \
 	terraform-docs \
 	bison \
 	clang-format \
-	clang-tidy \
 	openjdk \
 	heml \
 	maven \
