@@ -22,6 +22,7 @@ BREW_PACKAGES = \
 	helm \
 	maven \
 	plantuml \
+	newman \
 
 .PHONY: install
 install:
