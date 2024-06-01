@@ -27,5 +27,7 @@ BREW_PACKAGES = \
 install:
 	@echo "Installing brew packages..."
 	@echo $(PATH)
-	@ls /home/runner/.linuxbrew/bin
+	@ls /home
+	@ls /home/linuxbrew/.linuxbrew
+	@ls /home/linuxbrew/.linuxbrew/bin
 	@brew install $(BREW_PACKAGES)
