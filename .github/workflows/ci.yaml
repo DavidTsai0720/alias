@@ -13,4 +13,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: make
+        run: |
+          make install-homebrew
+          make
+          make install-gvm
