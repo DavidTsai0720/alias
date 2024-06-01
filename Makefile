@@ -4,7 +4,6 @@ BREW_PACKAGES = \
 	tree \
 	nvm \
 	go \
-	terraform \
 	tfenv \
 	liquibase \
 	sqlc \
