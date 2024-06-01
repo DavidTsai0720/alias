@@ -1,4 +1,6 @@
 BREW_PACKAGES = \
+	docker-compose \
+	pipenv \
 	awscli \
 	pre-commit \
 	tree \
