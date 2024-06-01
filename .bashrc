@@ -9,19 +9,31 @@ alias gn=':;_f(){ git diff "$1" "$2" --name-only;}; _f'
 alias gl=':;_f(){ git log --oneline -"$1";};_f'
 alias dl=':;_f(){ docker logs --tail 10 -f "$1";};_f'
 
-alias ll="ls -l -color=auto"
+alias ll="ls -l --color=auto"
 alias lf=':;_f(){ ls -ld ${1:-$PWD}/* ${1:-$PWD}/.[^.]* ${@:2} 2>/dev/null; };_f'
 alias sc="source ~/.bashrc"
 alias c="clear"
 
-alias db='docker exec -it postgres /bin/sh'
-alias redis='docker exec -it redis /bin/sh'
+# database settings
+export POSTGRES_HOST=localhost
+export POSTGRES_PASSWORD=postgres
+export POSTGRES_USER=postgres
+export POSTGRES_PORT=5432
+export POSTGRES_DB=users
+export LOCAL_DB_NAME=db
 
-alias python="python3"
-alias pip="pip3"
+alias create-db="docker run --name db -itd --restart always \
+-p ${POSTGRES_PORT}:5432 \
+-e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} \
+-e POSTGRES_PORT=5432 -e POSTGRES_DB=${POSTGRES_DB} \
+postgres:16-alpine"
 
-alias ...="cd $HOME/worker"
-alias venv=':;_f(){ [[ "$VIRTUAL_ENV" == "" ]] && source $(pwd)/venv/bin/activate || deactivate;};_f'
+alias update-db='liquibase --url="jdbc:postgresql://localhost:${POSTGRES_PORT}/${POSTGRES_DB}" \
+--username=${POSTGRES_USER} \
+--password=${POSTGRES_PASSWORD} \
+--changeLogFile=changelog.xml update'
 
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin
+alias delete-db="docker stop ${LOCAL_DB_NAME} && docker rm ${LOCAL_DB_NAME}"
+
+alias create-dynamodb='docker run -itd --name dynamodb -p 8000:8000 amazon/dynamodb-local'
+alias delete-dynamodb='docker stop dynamodb && docker rm dynamodb'
