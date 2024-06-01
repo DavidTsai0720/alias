@@ -10,7 +10,7 @@ BREW_PACKAGES = \
 	sqlc \
 	kubectl \
 	pipenv \
-	golang-lint \
+	golangci-lint \
 	pylint \
 	shellcheck \
 	prettier \
@@ -27,7 +27,4 @@ BREW_PACKAGES = \
 install:
 	@echo "Installing brew packages..."
 	@echo $(PATH)
-	@ls /home
-	@ls /home/linuxbrew/.linuxbrew
-	@ls /home/linuxbrew/.linuxbrew/bin
 	@brew install $(BREW_PACKAGES)
