@@ -1,4 +1,5 @@
 BREW_PACKAGES = \
+	cookiecutter \
 	docker-compose \
 	pipenv \
 	awscli \
