@@ -1,5 +1,50 @@
 [MAIN]
-disable=
-    missing-module-docstring,
+
+[MESSAGE CONTROL]
+disable=missing-module-docstring,
+    missing-function-docstring,
     missing-class-docstring,
-    too-few-public-methods
+    logging-fstring-interpolation
+
+[TYPECHECK]
+ignored-modules=sqlalchemy
+
+[FORMAT]
+max-line-length=120
+
+[DESIGN]
+max-args=5
+max-attributes=7
+max-locals=15
+max-returns=5
+max-branches=12
+max-statements=50
+max-parents=7
+max-module-members=10
+max-line-complexity=15
+max-bool-expr=5
+max-bool-expr-complexity=2
+max-nested-blocks=5
+max-try-body-length=2
+max-except-body-length=2
+max-if-body-length=2
+max-elif-body-length=2
+max-else-body-length=2
+max-loop-body-length=5
+max-while-body-length=5
+max-for-body-length=5
+max-iter-args=5
+max-iter-locals=5
+max-iter-items=5
+max-iter-values=5
+max-iter-returns=5
+max-iter-branches=5
+max-iter-statements=5
+max-iter-parents=5
+max-iter-members=5
+
+[LOGGING]
+logging-modules=logging
+
+[REFECTORING]
+max-nested-blocks=5

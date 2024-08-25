@@ -1,0 +1,12 @@
+{
+    "words": [
+        "awscli",
+        "cookiecutter",
+        "cspell",
+        "Parens",
+        "plantuml",
+        "pyenv",
+        "shellcheck",
+        "tfenv"
+    ]
+}
