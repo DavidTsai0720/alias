@@ -14,6 +14,16 @@ alias lf=':;_f(){ ls -ld ${1:-$PWD}/* ${1:-$PWD}/.[^.]* ${@:2} 2>/dev/null; };_f
 alias sc="source ~/.bashrc"
 alias c="clear"
 
+alias venv=':;_f() { [ ! -d ./venv ] && python -m venv venv; [ !-z "$VIRTUAL_ENV" ] && deactivate || source venv/bin/activate; };_f'
+
+function py-check() {
+    black --line-length=120 "$1"
+    autopep8 --in-place --experimental --max-line-length=120 "$1"
+    isort --line-lenght=120 "$1"
+    flake8 --ignore=E501,W503 "$1"
+    pylint $1
+}
+
 # database settings
 export POSTGRES_HOST=localhost
 export POSTGRES_PASSWORD=postgres
@@ -39,4 +49,16 @@ alias delete-db="docker stop ${LOCAL_DB_NAME} && docker rm ${LOCAL_DB_NAME}"
 alias create-dynamodb='docker run -itd --name dynamodb -p 8000:8000 amazon/dynamodb-local'
 alias delete-dynamodb='docker stop dynamodb && docker rm dynamodb'
 
-# python3 -c 'import locale; print(locale.getpreferredencoding())'
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# [[ -s "/home/david/.gvm/scripts/gvm" ]] && source "/home/david/.gvm/scripts/gvm"
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init --path)"
+# fi

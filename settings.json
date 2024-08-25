@@ -1,0 +1,36 @@
+{
+    // "terminal.integrated.defaultProfile.windows": "bash",
+    // "terminal.integrated.defaultProfile.osx": "bash",
+    // "terminal.integrated.defaultProfile.linux": "bash",
+    "workbench.iconTheme": "material-icon-theme",
+    "git.openRepositoryInParentFolders": "never",
+    "redhat.telemetry.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontLigatures": false,
+    "docker.commands.logs": "${containerCommand} logs --tail 20 -f ${containerId}",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "editor.formatOnSave": false,
+    "python.terminal.activateEnvironment": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": ["--line-length", "120"],
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.indentSize": "tabSize",
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.formatOnSave": true
+    }
+}

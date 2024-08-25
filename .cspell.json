@@ -1,12 +1,16 @@
 {
     "words": [
+        "Anson",
         "awscli",
         "cookiecutter",
         "cspell",
+        "esbenp",
+        "linuxbrew",
         "Parens",
         "plantuml",
         "pyenv",
         "shellcheck",
+        "shellenv",
         "tfenv"
     ]
 }
