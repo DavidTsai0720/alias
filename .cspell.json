@@ -1,16 +1,25 @@
 {
-    "words": [
-        "Anson",
-        "awscli",
-        "cookiecutter",
-        "cspell",
-        "esbenp",
-        "linuxbrew",
-        "Parens",
-        "plantuml",
-        "pyenv",
-        "shellcheck",
-        "shellenv",
-        "tfenv"
-    ]
+  "words": [
+    "Anson",
+    "awscli",
+    "contextcheck",
+    "cookiecutter",
+    "cspell",
+    "depguard",
+    "dtsai",
+    "esbenp",
+    "execinquery",
+    "exhaustruct",
+    "gomnd",
+    "gomodguard",
+    "linuxbrew",
+    "Parens",
+    "plantuml",
+    "pyenv",
+    "shellcheck",
+    "shellenv",
+    "tfenv",
+    "varnamelen",
+    "wrapcheck"
+  ]
 }

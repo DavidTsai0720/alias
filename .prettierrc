@@ -19,7 +19,7 @@
             "options": {
                 "singleQuote": false,
                 "requirePragma": true,
-                "tabWidth": 4
+                "tabWidth": 2
             }
         },
         {
